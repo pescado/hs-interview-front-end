@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Dog } from 'src/app/models/models';
+import { DogService } from 'src/app/services/dog.service';
 
 @Component({
   selector: 'app-dog-list-container',
@@ -8,10 +9,11 @@ import { Dog } from 'src/app/models/models';
   styleUrls: ['./dog-list-container.component.scss'],
 })
 export class DogListContainerComponent implements OnInit {
-  ourDogs: BehaviorSubject<Dog[]>;
 
-  constructor() { }
+  constructor(private dogService: DogService) { }
 
   ngOnInit() {
   }
+
+  ourDogs$: Observable<Dog[]> = this.dogService.dogs$;
 }

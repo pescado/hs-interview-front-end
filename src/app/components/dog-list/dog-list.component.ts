@@ -7,9 +7,12 @@ import { Dog } from 'src/app/models/models';
   styleUrls: ['./dog-list.component.scss']
 })
 export class DogListComponent implements OnInit {
+  @Input() dogs: Dog[];
 
   constructor() { }
 
   ngOnInit() {
   }
+
+
 }
