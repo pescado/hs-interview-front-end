@@ -14,6 +14,4 @@ export class DogListContainerComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  ourDogs$: Observable<Dog[]> = this.dogService.dogs$;
 }
